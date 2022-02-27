@@ -3,6 +3,8 @@
     color: white;
     padding: 5px;
     margin: 5px;
+    border-radius: 5px;
+
 }
 
 #student-plan table{
@@ -13,18 +15,33 @@
     border:1px solid gray;
 }
 
-#student-plan td div.C{
+#student-plan div.C{
     background-color:#f39c12;
 }
-#student-plan td div.P{
+#student-plan div.P{
     background-color:#00c0ef;
 }
 
-#student-plan td div.W{
+#student-plan div.W{
     background-color:#00a65a;
 }
 
-#student-plan td div.L{
+#student-plan div.L{
     background-color:#3c8dbc;
+}
+
+#student-plan div.TN{
+    border: 3px solid green;
+}
+
+#student-plan div.TP{
+    border: 3px solid orange;
+}
+
+#plan-legend div{
+    margin: 5px;
+    padding: 5px;
+    border-radius: 5px;
+    width: min-content;
 }
 
