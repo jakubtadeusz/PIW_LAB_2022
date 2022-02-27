@@ -1,0 +1,30 @@
+
+#student-plan td div{
+    color: white;
+    padding: 5px;
+    margin: 5px;
+}
+
+#student-plan table{
+    border:1px solid black;
+}
+
+#student-plan table th, td{
+    border:1px solid gray;
+}
+
+#student-plan td div.C{
+    background-color:#f39c12;
+}
+#student-plan td div.P{
+    background-color:#00c0ef;
+}
+
+#student-plan td div.W{
+    background-color:#00a65a;
+}
+
+#student-plan td div.L{
+    background-color:#3c8dbc;
+}
+
