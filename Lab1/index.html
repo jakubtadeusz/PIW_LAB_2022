@@ -10,96 +10,138 @@
 
 <body>
     <div id="navigation-bar">
-        <div class="navigation-bar-item">
-            Strona główna
+        <div class="navigation-bar-item selected">
+            <a href = index.html>Strona główna</a>
         </div>
         <div class="navigation-bar-item">
-            Podstrona
+            <a href="page.html">Podstrona</a>
         </div>
     </div>
-    <div id="student-container">
+    <div id="content-container">
         <div id="student-info">
             <div id="student-image">
                 <img src="https://avatars.githubusercontent.com/u/39742282?s=400&v=4">
             </div>
             <div id="student-name">
                 <h1>Informacje o studencie</h1>
-                Imię, Nazwisko: Jakub Tadeusz <br>
-                Numer indeksu: 256760 <br>
-                Email: 256760@student.pwr.edu.pl <br>
-                Github: <a href="https://github.com/jakubtadeusz">https://github.com/jakubtadeusz</a>
+                <div><img src = "https://thumbs.dreamstime.com/b/name-icon-vector-male-user-person-profile-avatar-symbol-identity-card-flat-color-glyph-pictogram-illustration-137931301.jpg"><p>Imię, Nazwisko: Jakub Tadeusz </p></div>
+                <div><img src="https://static.thenounproject.com/png/2158696-200.png"><p>Numer indeksu: 256760</p></div>
+                <div><img src="data:image/png;base64,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"><p>Email: 256760@student.pwr.edu.pl</p></div>
+                <div><a href="https://github.com/jakubtadeusz"><img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png"><p></a>Github: <a href="https://github.com/jakubtadeusz">https://github.com/jakubtadeusz</a></p></div>
             </div>
         </div>
         <div id="student-description">
             <h3>Historia studenta</h3>
             <div id="text-description">
-                <p>Jakub Tadeusz swoją historię z informatyką rozpoczął na początku szkoły średniej, 
+                <p>Jakub Tadeusz swoją historię z informatyką rozpoczął na początku szkoły średniej,
                     kiedy dołączył do koła zajmującego się tematyką programowania mikrokontrolerów Arduino.
-                    Razem z innymi członkami koła, reklamował szkołę na wszelkich odbywającej się na terenie placówki imprezach, 
-                    np. dniach otwartych, pokazując zrealizowane wspólnie projekty.              
+                    Razem z innymi członkami koła, reklamował szkołę na wszelkich odbywającej się na terenie placówki
+                    imprezach,
+                    np. dniach otwartych, pokazując zrealizowane wspólnie projekty.
                 </p>
-                <p>Po ukończeniu szkoły średniej, Jakub zdecydował się na podjęcie studiów informatycznych na Politechnice Wrocławskiej.
-                    Realizując program studiów, powiększył swoją wiedzę dotyczącą programowania o językie takie jak C++, Java.
-                    Na drugim roku, w ramach działalności koła naukowego KN Kredek, Jakub ukończył kurs tworzenia aplikacji CPC,
-                     gdzie poznał język C#, wraz z frameworkami pozwalającymi na tworzenie odpowiedniego backendu, oraz podstawy frontendu, na które 
-                     składały się podstawy html + css + js oraz biblioteka React.js.
+                <p>Po ukończeniu szkoły średniej, Jakub zdecydował się na podjęcie studiów informatycznych na
+                    Politechnice Wrocławskiej.
+                    Realizując program studiów, powiększył swoją wiedzę dotyczącą programowania o językie takie jak C++,
+                    Java.
+                    Na drugim roku, w ramach działalności koła naukowego KN Kredek, Jakub ukończył kurs tworzenia
+                    aplikacji CPC,
+                    gdzie poznał język C#, wraz z frameworkami pozwalającymi na tworzenie odpowiedniego backendu, oraz
+                    podstawy frontendu, na które
+                    składały się podstawy html + css + js oraz biblioteka React.js.
                 </p>
                 <p>Oprócz rzeczy związanych typowo z programowaniem, Jakub interesuje się sportami ekstremalnymi,
-                     muzyką, głównie rockową i metalową oraz wszelkiego rodzaju grami, komputerowymi oraz planszowymi.</p>
+                    muzyką, głównie rockową i metalową oraz wszelkiego rodzaju grami, komputerowymi oraz planszowymi.
+                </p>
             </div>
         </div>
         <div id="student-plan">
-            <h2>Plan zajęć</h1>
-            <table>
-                <tr>
-                    <th>Godzina</th>
-                    <th>Poniedziałek</th>
-                    <th>Wtorek</th>
-                    <th>Środa</th>
-                    <th>Czwartek</th>
-                    <th>Piątek</th>
-                </tr>
-                <tr>
-                    <th>7:30-9:00</th>
-                    <td></td>
-                    <td><div class="TP C">SI</div></td>
-                    <td><div class="TN W">IO</div></td>
-                    <td><div class="TP L">SO2</div><div class="TN P">UCISW2</div></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <th>9:15-11:00</th>
-                    <td></td>
-                    <td><div class="TP P">RiPO</div></td>
-                    <td><div class="TP W">RiPO</div></td>
-                    <td><div class="TN P">UCiSW2</div></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <th>11:15-13:00</th>
-                    <td></td>
-                    <td><div class="TP P">RiPO</div></td>
-                    <td></td>
-                    <td><div class="TP P">IO</div><div class="TN P">PiPG</div></td>
-                    <td><div class="TN W">PIW</div><div class="TP W">PiPG</div></td>
-                </tr>
-                <tr>
-                    <th>13:15-15:00</th>
-                    <td></td>
-                    <td></td>
-                    <td><div class="TN L">PIW</div></td>
-                    <td><div class="TP P">IO</div><div class="TN P">PiPG</div></td>
-                    <td><div class="TN W">UCiSW2</div></td>
-                </tr>
-                <tr>
-                    <th>15:15-17:00</th>
-                    <td></td>
-                    <td><div class="P">PZ</div></td>
-                    <td><div class="TN P">SO2</div></td>
-                    <td></td>
-                    <td><div class="W">SI</div></td>
-                </tr>
-            </table>
+            <div>
+                <h2>Plan zajęć</h1>
+                    <table>
+                        <tr>
+                            <th>Godzina</th>
+                            <th>Poniedziałek</th>
+                            <th>Wtorek</th>
+                            <th>Środa</th>
+                            <th>Czwartek</th>
+                            <th>Piątek</th>
+                        </tr>
+                        <tr>
+                            <th>7:30-9:00</th>
+                            <td></td>
+                            <td>
+                                <div class="TP C">SI</div>
+                            </td>
+                            <td>
+                                <div class="TN W">IO</div>
+                            </td>
+                            <td>
+                                <div class="TP L">SO2</div>
+                                <div class="TN P">UCISW2</div>
+                            </td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th>9:15-11:00</th>
+                            <td></td>
+                            <td>
+                                <div class="TP P">RiPO</div>
+                            </td>
+                            <td>
+                                <div class="TP W">RiPO</div>
+                            </td>
+                            <td>
+                                <div class="TN P">UCiSW2</div>
+                            </td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th>11:15-13:00</th>
+                            <td></td>
+                            <td>
+                                <div class="TP P">RiPO</div>
+                            </td>
+                            <td></td>
+                            <td>
+                                <div class="TP P">IO</div>
+                                <div class="TN P">PiPG</div>
+                            </td>
+                            <td>
+                                <div class="TN W">PIW</div>
+                                <div class="TP W">PiPG</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>13:15-15:00</th>
+                            <td></td>
+                            <td></td>
+                            <td>
+                                <div class="TN L">PIW</div>
+                            </td>
+                            <td>
+                                <div class="TP P">IO</div>
+                                <div class="TN P">PiPG</div>
+                            </td>
+                            <td>
+                                <div class="TN W">UCiSW2</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>15:15-17:00</th>
+                            <td></td>
+                            <td>
+                                <div class="P">PZ</div>
+                            </td>
+                            <td>
+                                <div class="TN P">SO2</div>
+                            </td>
+                            <td></td>
+                            <td>
+                                <div class="W">SI</div>
+                            </td>
+                        </tr>
+                    </table>
+            </div>
             <div id="plan-legend">
                 <h4>Legenda:</h4>
                 <div class="TN">Tydzień nieparzysty</div>
@@ -109,7 +151,7 @@
                 <div class="P">Projekt</div>
                 <div class="L">Laboratorium</div>
             </div>
-            
+
         </div>
     </div>
 </body>

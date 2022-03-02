@@ -1,4 +1,41 @@
 
+body{
+    display: flex;
+    flex-direction: row;
+}
+
+#student-info{
+    margin-top: 20px;
+    margin-left: 50px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+#student-info div{
+    margin-right: 50px;
+}
+
+#student-image img{
+    width: 250px;
+    height: auto;
+}
+
+#student-description{
+    border: 5px solid #3c8dbc;
+    border-radius: 20px;
+    padding: 20px;
+    margin: 50px;
+}
+
+
+#student-plan{
+    margin-left: 50px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
 #student-plan td div{
     color: white;
     padding: 5px;
@@ -38,6 +75,10 @@
     border: 3px solid orange;
 }
 
+#plan-legend{
+    margin-left: 50px;
+}
+
 #plan-legend div{
     margin: 5px;
     padding: 5px;
@@ -45,3 +86,62 @@
     width: min-content;
 }
 
+#student-name{
+    display: flex;
+    flex-direction: column;
+}
+
+#student-image img{
+    border-radius: 50px;
+}
+
+#student-name div{
+    display: flex;
+    flex-direction: row;
+    margin: 5px;
+}
+
+#student-name div p{
+    margin-left: 20px;
+}
+
+#student-name img{
+    width: 50px;
+    height: auto;
+}
+
+#navigation-bar{
+    display: flex;
+    flex-direction: column;
+    background-color: #3c8dbc;
+    align-self: flex-start;
+    height: 2000px;
+    width: 200px;
+    font-size: large;
+    color: aliceblue;
+    box-shadow: 5px 5px 15px 5px gray;
+}
+
+#navigation-bar .navigation-bar-item{
+    margin-top: 20px;
+    padding-left: 15px;
+    margin-left: 5px;
+    width: auto;
+    margin-right: 5px;
+}
+
+#navigation-bar .navigation-bar-item.selected{
+    box-shadow: 1px 1px 15px 1px black;
+    background-color: #3c8dbc;
+    font-weight: bold;
+}
+#navigation-bar .navigation-bar-item a{
+    color: aliceblue;
+    text-decoration: none;
+}
+
+#content-container{
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
