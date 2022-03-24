@@ -1,0 +1,151 @@
+
+
+#content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #e1e2e1;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    align-self: center;
+}
+
+.list-item{
+    display: flex;
+    width: fit-content;
+    height: fit-content;
+    flex-direction: column;
+
+    box-shadow: 1px 1px 4px black;
+    border-radius: 0.2em;
+    margin: 1em;
+
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: -moz-none;
+    -o-user-select: none;
+    user-select: none;
+}
+
+.list-header{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #0277bd;
+    padding-left: 1em;
+    padding-right: 1em;
+    padding: 0.5em;
+    color: white;
+    border-top-left-radius: 0.2em;
+    border-top-right-radius: 0.2em;
+}
+
+.task-item{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 0.5em;
+    padding-right: 1em;
+}
+
+.hidden-item{
+    display: none;
+}
+
+.empty-list-info{
+    margin: 0.5em;
+    color: gray;
+}
+
+.task-pointer{
+    width: 1em;
+    height: 1em;
+    background-color: #0277bd;
+    border-radius: 1em;
+    margin: 0.5em;
+}
+
+.task-date{
+    margin-left: 1em;
+    visibility: hidden;
+}
+
+.finished-task .task-content{
+    text-decoration: line-through;
+    color: gray;
+}
+
+.finished-task .task-date{
+    visibility: visible;
+    color: black;
+    text-decoration: none;
+}
+
+.tasks-list{
+    background-color: white;
+    border-radius: 0.2em;
+}
+
+.tasks-list.hidden-list{
+    display: none;
+}
+
+.search-input {
+    display: flex;
+    flex-direction: row;
+}
+
+.search-input *{
+    padding-left: 1em;
+    padding-right: 1em;
+}
+
+.task-line {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#undo-delete{
+    display: none;
+}
+
+#delete-accept-modal{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 30%;
+    left: 30%;
+    color: white;
+    background-color: #0277bd;
+    width: 40%;
+    height: 40%;
+    border-radius: 1em;
+    box-shadow: 1px 1px 4px black;
+}
+
+#accept-delete{
+    background-color: green;
+    color: white;
+    font-size: large;
+    padding: 1em;
+    margin: 1em;
+    border-radius: 1em;
+    box-shadow: 1px 1px 4px black;
+}
+
+#discard-delete{
+    background-color: red;
+    color: white;
+    font-size: large;
+    padding: 1em;
+    margin: 1em;
+    border-radius: 1em;
+    box-shadow: 1px 1px 4px black;
+}
+
+button{
+    margin: 0.5em;
+}
