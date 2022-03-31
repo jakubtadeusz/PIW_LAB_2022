@@ -1,4 +1,6 @@
 import './App.css';
+import {BrowserRouter, Routes, Route, NavLink} from 'react-router-dom';
+import StudentsPage from './Pages/StudentsPage';
 
 function App() {
   return (
@@ -16,9 +18,9 @@ function App() {
 
       <Routes>
 
-        <Route path="/" element={<Home toDos={toDos} setToDos={setToDos} />}/>
-        <Route path="/students" element={<h2>Koniec internetu</h2>} />
-        <Route path="/groups" element={<Search toDos={toDos}/>} />
+        <Route path="/" element={<StudentsPage/>}/>
+        <Route path="/students" element={<StudentsPage/>} />
+        <Route path="/groups" element={<p>Groups</p>} />
       </Routes>
       </BrowserRouter>
     </main>
