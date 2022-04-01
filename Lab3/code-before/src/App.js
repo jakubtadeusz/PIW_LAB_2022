@@ -15,13 +15,13 @@ function App() {
         <NavLink to="/students">Studenci</NavLink>
         <NavLink to="/groups">Grupy projektowe</NavLink>
       </nav>
-
+      <div className="AppContent">
       <Routes>
-
         <Route path="/" element={<StudentsPage/>}/>
         <Route path="/students" element={<StudentsPage/>} />
         <Route path="/groups" element={<p>Groups</p>} />
       </Routes>
+      </div>
       </BrowserRouter>
     </main>
     <footer>Jakub Tadeusz - 256760 - PIW 2022</footer>
