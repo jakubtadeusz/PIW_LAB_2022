@@ -1,6 +1,6 @@
 let newId = 0;
 
-var students = [
+const students = [
     {
         id: newId++,
         name: "Jakub",
@@ -9,7 +9,7 @@ var students = [
         tags: ["React.js", "Angular", "C#", "ASP.NET", ".NET 5.0", "Node.js", "TypeScript", "frontend", "backend"],
         courses: ["PIW", "AK2", "RiPO"],
         description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
-        date: new Date(2022, 3, 10, 15, 27, 32, 21)
+        date: new Date(2022, 2, 10, 15, 27, 32, 21)
     },{
         id: newId++,
         name: "Jacek",
@@ -18,7 +18,7 @@ var students = [
         tags: ["Unity", "C#", "frontend"],
         courses: ["PiPG"],
         description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
-        date: new Date(2022, 3, 5, 12, 37, 6, 33)
+        date: new Date(2022, 2, 5, 12, 37, 6, 33)
     },
     {
         id: newId++,
@@ -28,14 +28,14 @@ var students = [
         tags: ["Java", "Spring", "backend", "Angular", "TypeScript", "frontend"],
         courses: ["PZ", "UCiSW"],
         description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
-        date: new Date(2022, 2, 27, 4, 35, 10, 49)
+        date: new Date(2022, 1, 27, 4, 35, 10, 49)
     }
 ];
 
 const StudentService = {
 
     getStudents: () => {
-        return students;
+        return students.sort(function(a, b){return b.date.getTime()-a.date.getTime()});
     },
 
     addStudent: (student) => {
