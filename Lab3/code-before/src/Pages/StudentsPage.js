@@ -28,7 +28,6 @@ function StudentsPage() {
 
   const filterStudents = (students) => {
     return students.filter((st)=>{
-      console.log(st.tags)
       for(let tag of tagsToFilter){
         let found = false;
         for(let stTag of st.tags){
@@ -40,6 +39,15 @@ function StudentsPage() {
         if(!found) return false;
       }
       return true;
+    }).filter((st)=>{
+      for(let course of st.courses){
+        if(course.toUpperCase().includes(courseToFilter.toUpperCase())){ 
+          return true;
+        }
+      }
+      return false;
+    }).filter((st)=>{
+      return st.description.toUpperCase().includes(descToFilter.toUpperCase());
     })
   }
 

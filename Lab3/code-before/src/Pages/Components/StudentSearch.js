@@ -6,7 +6,7 @@ function StudentSearch (props) {
     let [tags, setTags] = useState([]);
 
     const handleCourseSearchChange = (event) => {
-        console.log(event.target.value);
+        props.updateCourse(event.target.value.trim());
     }
 
     const handleTagsSearchChange = (event) => {
@@ -16,7 +16,7 @@ function StudentSearch (props) {
     }
 
     const handleDescSearchChange = (event) => {
-        console.log(event.target.value);
+        props.updateDesc(event.target.value.trim());
     }
 
     return (
