@@ -5,23 +5,21 @@ const groups = [
     {
         id: newId++,
         name: "Projekt zespołowy",
-        owner: {
-            email: "example@mail.com",
-            name: "Jakub",
-            surname: "Tadeusz"
-        },
         team: [{
             name: "Jakub",
             surname: "Tadeusz",
-            occupation: "ownership and management"
+            occupation: "ownership and management",
+            email: "example@mail.com"
         },{
             name: "Jacek",
             surname: "Trzeszczyński",
-            occupation: "frontend"
+            occupation: "frontend",
+            email: "example@mail.com"
         },{
             name: "Krzysztof",
             surname: "Konieczny",
-            occupation: "backend"
+            occupation: "backend",
+            email: "example@mail.com"
         }],
         description: "Grupa zajmująca się projektem zespołowym xyz",
         course: "PZ"
@@ -29,23 +27,21 @@ const groups = [
     {
         id: newId++,
         name: "PIW-O help",
-        owner: {
-            email: "example@mail.com",
-            name: "Stefan",
-            surname: "Rudy"
-        },
         team: [{
             name: "Stefan",
             surname: "Rudy",
-            occupation: "HTML, CSS, JS"
+            occupation: "HTML, CSS, JS",
+            email: "example@mail.com"
         },{
             name: "Andrzej",
             surname: "Ważny",
-            occupation: "React.js"
+            occupation: "React.js",
+            email: "example@mail.com"
         },{
             name: "Natalia",
             surname: "Lewa",
-            occupation: "TypeScript, Docker"
+            occupation: "TypeScript, Docker",
+            email: "example@mail.com"
         }],
         description: "Wspólne opracowywanie materiałów na egzamin z PIW",
         course: "PIW"
