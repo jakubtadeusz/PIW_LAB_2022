@@ -15,7 +15,7 @@ function StudentEntry(props) {
       </div>}
       <h4>{student.name} {student.surname}</h4>
       <p>{student.description}</p>
-      {student.tags !== undefined && <div className="tags" key={student.id}>
+        {student.tags !== undefined && <div className="tags" key={student.id}>
         {student.tags.map((tag, i)=><div className="tag" key={i}>{tag}</div>)}
       </div>}
     </div>
