@@ -14,7 +14,7 @@ function StudentsPage() {
   return (
     <div className="StudentsPage">
         <StudentSearch></StudentSearch>
-        <button type="button" class="btn btn-primary">Dodaj nowe ogłoszenie!</button>
+        <button type="button" className="btn btn-primary">Dodaj nowe ogłoszenie!</button>
         {students.map((student)=><StudentEntry student={student} key={"student_" + student.id}></StudentEntry>)
         }
     </div>
