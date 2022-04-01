@@ -11,18 +11,18 @@ function StudentEntry(props) {
   return (
     <div className="StudentEntry">
       {student.courses !== undefined && 
-        <div className="courses" key={student.id}>
+        <div className="courses" key={"courses_" + student.id}>
           {student.courses.map((course, i)=>{
-            <div className="course" key={i}>{course}</div>
+            return <div className="course" key={"course_" + i}>{course}</div>
           })}
         </div>
       }
       <h4>{student.name} {student.surname}</h4>
       <p>{student.description}</p>
       {student.tags !== undefined && 
-        <div className="tags" key={student.id}>
+        <div className="tags" key={"tags_" + student.id}>
           {student.tags.map((tag, i)=>{
-            <div className="tag" key={i}>{tag}</div>
+            return <div className="tag" key={"tag_" + i}>{tag}</div>
           })}
         </div>
       }
