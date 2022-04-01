@@ -10,6 +10,10 @@ function StudentsPage() {
   const [searchButtonContent, setSearchButtonContent] = useState("Rozwiń wyszukiwanie");
   const [showSearch, setShowSearch] = useState(false);
 
+  const [tagsToFilter, setTagsToFilter] = useState([]);
+  const [courseToFilter, setCourseToFilter] = useState("");
+  const [descToFilter, setDescToFilter] = useState("");
+
   useEffect(()=>{
     setStudents(StudentService.getStudents());
   }, [])
@@ -22,16 +26,40 @@ function StudentsPage() {
     setShowSearch(!showSearch);
   }
 
+  const filterStudents = (students) => {
+    return students.filter((st)=>{
+      console.log(st.tags)
+      for(let tag of tagsToFilter){
+        let found = false;
+        for(let stTag of st.tags){
+          if(stTag.toUpperCase().includes(tag.toUpperCase())){ 
+            found = true;
+            break;
+          }
+        }
+        if(!found) return false;
+      }
+      return true;
+    })
+  }
+
+  const getStudentSearch = () =>{
+    return(
+      <StudentSearch updateTags={setTagsToFilter} updateCourse={setCourseToFilter} updateDesc={setDescToFilter}></StudentSearch>
+    );
+  }
+
   return (
     <div className="StudentsPage">
       <div className="students-buttons">
         <button type="button" className="btn btn-dark" onClick={handleShowSearchButton}>{searchButtonContent}</button>
         <button type="button" className="btn btn-dark">Dodaj nowe ogłoszenie!</button>
       </div>
-      {showSearch && <StudentSearch></StudentSearch>}
-      {students.map((student)=><StudentEntry student={student} key={"student_" + student.id}></StudentEntry>)}
+      {showSearch && getStudentSearch()}
+      {filterStudents(students).map((student)=><StudentEntry student={student} key={"student_" + student.id}></StudentEntry>)}
     </div>
   );
+  
 }
 
 export default StudentsPage;

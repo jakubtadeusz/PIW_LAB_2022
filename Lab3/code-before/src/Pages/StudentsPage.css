@@ -1,3 +1,7 @@
+.StudentsPage{
+    width: 100%;
+}
+
 .students-buttons{
     display: flex;
     justify-content: space-between;
