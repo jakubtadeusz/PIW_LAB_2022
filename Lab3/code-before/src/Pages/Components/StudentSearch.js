@@ -1,9 +1,9 @@
 import "./StudentSearch.css"
-import {useState} from "react"
+import {useState, useEffect} from "react"
 
 function StudentSearch (props) {
 
-    let [tags, setTags] = useState(["test", "test2"]);
+    let [tags, setTags] = useState([]);
 
     const handleCourseSearchChange = (event) => {
         console.log(event.target.value);
@@ -12,6 +12,7 @@ function StudentSearch (props) {
     const handleTagsSearchChange = (event) => {
         const tags = event.target.value.split(",").map(tag=>tag.trim()).filter(tag=>tag!=="");
         setTags(tags);
+        props.updateTags(tags);
     }
 
     const handleDescSearchChange = (event) => {
