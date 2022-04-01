@@ -1,5 +1,5 @@
 import "./StudentSearch.css"
-import {useState, useEffect} from "react"
+import {useState} from "react"
 
 function StudentSearch (props) {
 
