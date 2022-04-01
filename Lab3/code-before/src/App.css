@@ -44,3 +44,8 @@ footer{
     background-color: #c51162;
     box-shadow: 0px 0px 4px 0px black;
 }
+
+.btn-dark{
+    background-color: #8e0038;
+    border-color: #8e0038;
+}
