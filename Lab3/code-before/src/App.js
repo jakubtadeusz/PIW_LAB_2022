@@ -1,6 +1,9 @@
 import './App.css';
 import {BrowserRouter, Routes, Route, NavLink} from 'react-router-dom';
 import StudentsPage from './Pages/StudentsPage';
+import AddStudentPage from './Pages/AddStudentPage';
+import GroupsPage from './Pages/GroupsPage';
+import AddGroupPage from './Pages/AddGroupPage';
 
 function App() {
   return (
@@ -19,7 +22,10 @@ function App() {
       <Routes>
         <Route path="/" element={<StudentsPage/>}/>
         <Route path="/students" element={<StudentsPage/>} />
-        <Route path="/groups" element={<p>Groups</p>} />
+        <Route path='/students/add'element={<AddStudentPage/>}/>
+        <Route path="/groups" element={<GroupsPage/>} />
+        <Route path="/groups/add" element={<AddGroupPage/>} />
+
       </Routes>
       </div>
       </BrowserRouter>

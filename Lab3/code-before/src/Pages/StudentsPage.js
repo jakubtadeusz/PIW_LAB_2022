@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import StudentService from "../Models/StudentService";
 import StudentEntry from "./Components/StudentEntry";
 import StudentSearch from "./Components/StudentSearch";
+import { useNavigate } from "react-router-dom";
 
 
 function StudentsPage() {
@@ -14,9 +15,15 @@ function StudentsPage() {
   const [courseToFilter, setCourseToFilter] = useState("");
   const [descToFilter, setDescToFilter] = useState("");
 
+  let navigate = useNavigate();
+
   useEffect(()=>{
     setStudents(StudentService.getStudents());
   }, [])
+
+  useEffect(()=>{
+    console.log(students);
+  }, [students])
 
   useEffect(()=>{
       setSearchButtonContent(showSearch?"Zwiń wyszukiwanie":"Rozwiń wyszukiwanie");
@@ -40,6 +47,7 @@ function StudentsPage() {
       }
       return true;
     }).filter((st)=>{
+      if(courseToFilter.length === 0) return true;
       for(let course of st.courses){
         if(course.toUpperCase().includes(courseToFilter.toUpperCase())){ 
           return true;
@@ -57,11 +65,15 @@ function StudentsPage() {
     );
   }
 
+  const handleAddStudentButton = () =>{
+    navigate("/students/add");
+  }
+
   return (
     <div className="StudentsPage">
       <div className="students-buttons">
         <button type="button" className="btn btn-dark" onClick={handleShowSearchButton}>{searchButtonContent}</button>
-        <button type="button" className="btn btn-dark">Dodaj nowe ogłoszenie!</button>
+        <button type="button" className="btn btn-dark" onClick={handleAddStudentButton}>Dodaj nowe ogłoszenie!</button>
       </div>
       {showSearch && getStudentSearch()}
       {filterStudents(students).map((student)=><StudentEntry student={student} key={"student_" + student.id}></StudentEntry>)}

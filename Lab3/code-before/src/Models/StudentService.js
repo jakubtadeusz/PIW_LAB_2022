@@ -1,8 +1,6 @@
-
-
 let newId = 0;
 
-const students = [
+var students = [
     {
         id: newId++,
         name: "Jakub",
@@ -42,6 +40,7 @@ const StudentService = {
 
     addStudent: (student) => {
         student.id = newId++;
+        student.date = new Date(Date.now());
         students.push(student);
         return student.id;
     }
