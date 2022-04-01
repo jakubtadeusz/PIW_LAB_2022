@@ -1,5 +1,6 @@
 import React from 'react';
 import GroupService from '../Models/GroupService'
+import GroupComponent from './Components/GroupComponent';
 
 class GroupsPage extends React.Component {
     
@@ -37,7 +38,7 @@ class GroupsPage extends React.Component {
                     <button type="button" className="btn btn-dark" onClick={this.handleShowSearchButton}>{this.state.searchButtonContent}</button>
                     <button type="button" className="btn btn-dark" onClick={this.handleAddGroupButton}>Dodaj nową grupę!</button>
                 </div>
-                {this.state.groups.map(group=><p>{group.name}</p>)}
+                {this.state.groups.map(group=><GroupComponent group={group}/>)}
             </div>
         );
     }
