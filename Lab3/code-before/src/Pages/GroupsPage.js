@@ -1,6 +1,8 @@
 import React from 'react';
 import GroupService from '../Models/GroupService'
 import GroupComponent from './Components/GroupComponent';
+import GroupSearch from './Components/GroupSearch';
+import './ElementsPage.css'
 
 class GroupsPage extends React.Component {
     
@@ -27,18 +29,39 @@ class GroupsPage extends React.Component {
       this.setState({showSearch: !this.state.showSearch});
     }
 
-    handleAddGroupButton = () =>{
+    handleAddGroupButton = () => {
         this.navigate("/groups/add");
+    }
+
+    setCourseToFilter = (course) => {
+        this.setState({courseToFilter: course});
+    }
+
+    setDescToFilter = (desc) => {
+        this.setState({descriptionToFilter: desc});
+    }
+
+    getGroupSearch = () => {
+        return <GroupSearch updateCourse={this.setCourseToFilter} updateDesc={this.setDescToFilter}/>
+    }
+
+    filterGroups = (groups) => {
+        return groups.filter(group =>{
+            return group.course.toUpperCase().includes(this.state.courseToFilter.toUpperCase());
+        }).filter(group => {
+            return group.description.toUpperCase().includes(this.state.descriptionToFilter.toUpperCase());
+        });
     }
 
     render () {
         return (
-            <div className='GroupsPage'>
-                <div className="groups-buttons">
+            <div className='ElementsPage'>
+                <div className="element-buttons">
                     <button type="button" className="btn btn-dark" onClick={this.handleShowSearchButton}>{this.state.searchButtonContent}</button>
                     <button type="button" className="btn btn-dark" onClick={this.handleAddGroupButton}>Dodaj nową grupę!</button>
                 </div>
-                {this.state.groups.map(group=><GroupComponent group={group}/>)}
+                {this.state.showSearch && this.getGroupSearch()}
+                {this.filterGroups(this.state.groups).map((group)=><GroupComponent group={group} key={"group_" + group.id}></GroupComponent>)}
             </div>
         );
     }
