@@ -5,6 +5,7 @@ import AddStudentPage from './Pages/AddStudentPage';
 import GroupsPage from './Pages/GroupsPage';
 import AddGroupPage from './Pages/AddGroupPage';
 import { useNavigate } from "react-router-dom";
+import SendMessage from './Pages/Components/SendMessage';
 
 function App() {
   let navigate = useNavigate();
@@ -26,6 +27,7 @@ function App() {
           <Route path='/students/add'element={<AddStudentPage/>}/>
           <Route path="/groups" element={<GroupsPage navigate={navigate}/>} />
           <Route path="/groups/add" element={<AddGroupPage/>} />
+          <Route path='/message/send'element={<SendMessage/>} />
         </Routes>
       </div>
     </main>
