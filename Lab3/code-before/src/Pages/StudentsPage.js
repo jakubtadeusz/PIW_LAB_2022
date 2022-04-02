@@ -1,4 +1,4 @@
-import "./StudentsPage.css"
+import "./ElementsPage.css"
 import { useState, useEffect } from "react";
 import StudentService from "../Models/StudentService";
 import StudentEntry from "./Components/StudentEntry";
@@ -70,8 +70,8 @@ function StudentsPage() {
   }
 
   return (
-    <div className="StudentsPage">
-      <div className="students-buttons">
+    <div className="ElementsPage">
+      <div className="element-buttons">
         <button type="button" className="btn btn-dark" onClick={handleShowSearchButton}>{searchButtonContent}</button>
         <button type="button" className="btn btn-dark" onClick={handleAddStudentButton}>Dodaj nowe ogłoszenie!</button>
       </div>

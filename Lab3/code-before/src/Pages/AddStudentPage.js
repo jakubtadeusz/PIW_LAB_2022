@@ -1,5 +1,5 @@
 import {useState} from "react"
-import "./AddStudentPage.css"
+import "./AddElementPage.css"
 import { useNavigate } from "react-router-dom";
 import StudentService from "../Models/StudentService";
 
@@ -42,7 +42,7 @@ function AddStudentPage () {
     }
 
     return (
-    <div className="AddStudent">
+    <div className="AddElement">
         <button type="button" className="btn btn-dark" onClick={handleBackButton}>Cofnij</button>
         <div className="student-info">
             <div>Imię: </div>

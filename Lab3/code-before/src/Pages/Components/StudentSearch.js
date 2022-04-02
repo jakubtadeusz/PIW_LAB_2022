@@ -1,4 +1,4 @@
-import "./StudentSearch.css"
+import "./Search.css"
 import {useState} from "react"
 
 function StudentSearch (props) {
@@ -20,7 +20,7 @@ function StudentSearch (props) {
     }
 
     return (
-    <div className="StudentSearch">
+    <div className="Search">
         <div className="course-search">
             <input type={"text"} placeholder="Szukaj po przedmiocie" className="form-control" onChange={(event) => handleCourseSearchChange(event)}></input>
         </div>
