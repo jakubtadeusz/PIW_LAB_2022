@@ -1,15 +1,22 @@
 import "./StudentEntry.css"
 import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 function StudentEntry(props) {
   const [student, setStudent] = useState([]);
+
+  let navigate = useNavigate();
 
   useEffect(()=>{
     setStudent(props.student);
   }, [props])
 
+  const handleEntryClick = () => {
+    navigate("/message/send", student.name + " " + student.surname);
+  }
+
   return (
-    <div className="StudentEntry">
+    <div className="StudentEntry" onClick={handleEntryClick}>
       {student.courses !== undefined && 
         <div className="courses" key={"courses_" + student.id}>
           {student.courses.map((course, i)=>{
