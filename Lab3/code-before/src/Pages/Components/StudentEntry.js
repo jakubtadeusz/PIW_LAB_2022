@@ -12,7 +12,7 @@ function StudentEntry(props) {
   }, [props])
 
   const handleEntryClick = () => {
-    navigate("/message/send", student.name + " " + student.surname);
+    navigate(`/message/send/${student.name} ${student.surname}`);
   }
 
   return (

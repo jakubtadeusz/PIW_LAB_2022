@@ -6,15 +6,19 @@ class GroupComponent extends React.Component {
     constructor (props) {
         super(props);
         this.group = props.group;
+        this.navigate = props.navigate;
     }
 
     componentDidMount(){
     }
-  
+
+    handleEntryClick = () => {
+        this.navigate(`/message/send/${this.group.name}`);
+    }
 
     render () {
         return (
-            <div className='GroupComponent'>
+            <div className='GroupComponent' onClick={this.handleEntryClick}>
                 <div className="courses" key={"courses_" + this.group.id}>
                     <div className="course" >{this.group.course}</div>
                 </div>

@@ -27,7 +27,7 @@ function App() {
           <Route path='/students/add'element={<AddStudentPage/>}/>
           <Route path="/groups" element={<GroupsPage navigate={navigate}/>} />
           <Route path="/groups/add" element={<AddGroupPage/>} />
-          <Route path='/message/send'element={<SendMessage/>} />
+          <Route path='/message/send/:name'element={<SendMessage/>} />
         </Routes>
       </div>
     </main>

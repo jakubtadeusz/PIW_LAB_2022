@@ -61,7 +61,7 @@ class GroupsPage extends React.Component {
                     <button type="button" className="btn btn-dark" onClick={this.handleAddGroupButton}>Dodaj nową grupę!</button>
                 </div>
                 {this.state.showSearch && this.getGroupSearch()}
-                {this.filterGroups(this.state.groups).map((group)=><GroupComponent group={group} key={"group_" + group.id}></GroupComponent>)}
+                {this.filterGroups(this.state.groups).map((group)=><GroupComponent group={group} key={"group_" + group.id} navigate={this.navigate}></GroupComponent>)}
             </div>
         );
     }
