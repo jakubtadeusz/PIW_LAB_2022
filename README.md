@@ -10,5 +10,5 @@
 
 ## Laboratorium 3 - React.JS
 
-[link do repozytorium](https://jakubtadeusz.github.io/PIW_LAB_2022/tree/main/Lab3)
+[link do repozytorium](https://github.com/jakubtadeusz/PIW_LAB_2022/tree/main/Lab3/code-before)
 
