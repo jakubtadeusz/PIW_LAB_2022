@@ -14,16 +14,16 @@
 
 <details><summary>Zrzuty ekranu</summary>
 
-![students](/screens/students.png)
+![students](/Lab3/screens/students.png)
   
-![add_student](/screens/add_student.png)
+![add_student](/Lab3/screens/add_student.png)
   
-![groups](/screens/groups.png)
+![groups](/Lab3/screens/groups.png)
   
-![add_group](/screens/add_group.png)
+![add_group](/Lab3/screens/add_group.png)
   
-![message](/screens/message.png)
+![message](/Lab3/screens/message.png)
   
-![sent](/screens/sent.png)
+![sent](/Lab3/screens/sent.png)
   
 </details>
