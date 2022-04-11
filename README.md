@@ -12,3 +12,18 @@
 
 [link do repozytorium](https://github.com/jakubtadeusz/PIW_LAB_2022/tree/main/Lab3/code-before)
 
+<details><summary>Zrzuty ekranu</summary>
+
+![students](/screens/students.png)
+  
+![add_student](/screens/add_student.png)
+  
+![groups](/screens/groups.png)
+  
+![add_group](/screens/add_group.png)
+  
+![message](/screens/message.png)
+  
+![sent](/screens/sent.png)
+  
+</details>
