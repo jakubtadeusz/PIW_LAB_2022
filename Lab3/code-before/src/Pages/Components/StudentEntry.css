@@ -1,0 +1,44 @@
+
+.StudentEntry{
+    padding: 1em;
+    border-radius: 1em;
+    margin: 0.5em;
+    box-shadow: 0px 0px 4px 0px black;
+}
+
+.tags{
+    display: flex;
+    flex-direction: row;
+    pad: 0.4em;
+    font-size: small;
+}
+
+.tag{
+    background-color: #8e0038;
+    color: white;
+    padding: 0.2em;
+    padding-left: 1em;
+    padding-right: 1em;
+    border-radius: 1em;
+    margin: 0.1em;
+    box-shadow: 1px 1px 4px 1px gray;
+}
+
+.courses{
+    display: flex;
+    flex-direction: row;
+    pad: 0.4em;
+    font-size: small;
+    margin-bottom: 1em;
+}
+
+.course{
+    background-color: #c51162;
+    color: white;
+    padding: 0.2em;
+    padding-left: 1em;
+    padding-right: 1em;
+    border-radius: 1em;
+    margin: 0.1em;
+    box-shadow: 1px 1px 4px 1px gray;
+}
