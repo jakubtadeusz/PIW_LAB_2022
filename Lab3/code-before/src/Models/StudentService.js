@@ -29,6 +29,26 @@ const students = [
         courses: ["PZ", "UCiSW"],
         description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
         date: new Date(2022, 1, 27, 4, 35, 10, 49)
+    },
+    {
+        id: newId++,
+        name: "Martyna",
+        surname: "Testowa",
+        email: "example4@mail.com",
+        tags: ["JUnit", "xUnit", "Mockito"],
+        courses: ["IO"],
+        description: "Szukam grupy na zajęcia z inżynierii oprogramowania",
+        date: new Date(2021, 1, 27, 4, 35, 10, 49)
+    },
+    {
+        id: newId++,
+        name: "Marcin",
+        surname: "Placeholderowy",
+        email: "example5@mail.com",
+        tags: ["JS", "TS", "WebDev"],
+        courses: ["PiPG"],
+        description: "Hobbystycznie zajmuję się WebDevem",
+        date: new Date(1995, 1, 27, 4, 35, 10, 49)
     }
 ];
 
