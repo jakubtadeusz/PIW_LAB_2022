@@ -11,6 +11,7 @@ function StudentEntry(props) {
     setStudent(props.student);
   }, [props])
 
+
   const handleEntryClick = () => {
     navigate(`/message/send/${student.name} ${student.surname}`);
   }

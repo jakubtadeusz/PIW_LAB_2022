@@ -1,61 +1,22 @@
 let newId = 0;
 
-const students = [
-    {
-        id: newId++,
-        name: "Jakub",
-        surname: "Tadeusz",
-        email: "example@mail.com",
-        tags: ["React.js", "Angular", "C#", "ASP.NET", ".NET 5.0", "Node.js", "TypeScript", "frontend", "backend"],
-        courses: ["PIW", "AK2", "RiPO"],
-        description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
-        date: new Date(2022, 2, 10, 15, 27, 32, 21)
-    },{
-        id: newId++,
-        name: "Jacek",
-        surname: "Trzeszczyński",
-        email: "example2@mail.com",
-        tags: ["Unity", "C#", "frontend"],
-        courses: ["PiPG"],
-        description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
-        date: new Date(2022, 2, 5, 12, 37, 6, 33)
-    },
-    {
-        id: newId++,
-        name: "Krzysztof",
-        surname: "Konieczny",
-        email: "example3@mail.com",
-        tags: ["Java", "Spring", "backend", "Angular", "TypeScript", "frontend"],
-        courses: ["PZ", "UCiSW"],
-        description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
-        date: new Date(2022, 1, 27, 4, 35, 10, 49)
-    },
-    {
-        id: newId++,
-        name: "Martyna",
-        surname: "Testowa",
-        email: "example4@mail.com",
-        tags: ["JUnit", "xUnit", "Mockito"],
-        courses: ["IO"],
-        description: "Szukam grupy na zajęcia z inżynierii oprogramowania",
-        date: new Date(2021, 1, 27, 4, 35, 10, 49)
-    },
-    {
-        id: newId++,
-        name: "Marcin",
-        surname: "Placeholderowy",
-        email: "example5@mail.com",
-        tags: ["JS", "TS", "WebDev"],
-        courses: ["PiPG"],
-        description: "Hobbystycznie zajmuję się WebDevem",
-        date: new Date(1995, 1, 27, 4, 35, 10, 49)
-    }
-];
+const students = [];
 
 const StudentService = {
 
     getStudents: () => {
-        return students.sort(function(a, b){return b.date.getTime()-a.date.getTime()});
+        return new Promise((resolve)=>{
+            if(students.length === 0){
+                fetch("/students/students.json").then(res=>res.json()).then(json=>{
+                    var newStudents = [...json.students.values()].map(s=>{s.date = new Date(s.date); return s})
+                    students.push(...newStudents);
+                    newId = students.length;
+                    resolve(students.sort(function(a, b){return b.date.getTime()-a.date.getTime()}));
+                })
+            }else{
+                resolve(students.sort(function(a, b){return b.date.getTime()-a.date.getTime()}));
+            }
+        })
     },
 
     addStudent: (student) => {

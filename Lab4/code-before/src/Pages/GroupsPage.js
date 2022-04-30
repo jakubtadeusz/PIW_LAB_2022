@@ -21,7 +21,11 @@ class GroupsPage extends React.Component {
     }
 
     componentDidMount(){
-        this.setState({groups: GroupService.getGroups()});
+        GroupService.getGroups().then(groups=>{
+            console.log(groups);
+            this.setState({groups: groups});
+        })
+        
     }
   
     handleShowSearchButton = () => {

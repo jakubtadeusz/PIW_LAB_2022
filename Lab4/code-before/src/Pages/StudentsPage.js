@@ -8,6 +8,7 @@ import { useNavigate } from "react-router-dom";
 
 function StudentsPage() {
   const [students, setStudents] = useState([]);
+  const [filteredStudents, setFilteredStudents] = useState([]);
   const [searchButtonContent, setSearchButtonContent] = useState("Rozwiń wyszukiwanie");
   const [showSearch, setShowSearch] = useState(false);
 
@@ -18,12 +19,11 @@ function StudentsPage() {
   let navigate = useNavigate();
 
   useEffect(()=>{
-    setStudents(StudentService.getStudents());
+    StudentService.getStudents().then(s=>{
+      console.log(s);
+      setStudents(s)});
   }, [])
 
-  useEffect(()=>{
-    console.log(students);
-  }, [students])
 
   useEffect(()=>{
       setSearchButtonContent(showSearch?"Zwiń wyszukiwanie":"Rozwiń wyszukiwanie");
