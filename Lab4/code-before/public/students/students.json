@@ -1,0 +1,52 @@
+{"students": [
+    {
+        "id": 0,
+        "name": "Jakub",
+        "surname": "Tadeusz",
+        "email": "example@mail.com",
+        "tags": ["React.js", "Angular", "C#", "ASP.NET", ".NET 5.0", "Node.js", "TypeScript", "frontend", "backend"],
+        "courses": ["PIW", "AK2", "RiPO"],
+        "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+        "date": "2022-03-10T14:27:32.021Z"
+    },{
+        "id": 1,
+        "name": "Jacek",
+        "surname": "Trzeszczyński",
+        "email": "example2@mail.com",
+        "tags": ["Unity", "C#", "frontend"],
+        "courses": ["PiPG"],
+        "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+        "date": "2022-03-05T11:37:06.033Z"
+    },
+    {
+        "id": 2,
+        "name": "Krzysztof",
+        "surname": "Konieczny",
+        "email": "example3@mail.com",
+        "tags": ["Java", "Spring", "backend", "Angular", "TypeScript", "frontend"],
+        "courses": ["PZ", "UCiSW"],
+        "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+        "date": "2022-02-27T03:35:10.049Z"
+    },
+    {
+        "id": 3,
+        "name": "Martyna",
+        "surname": "Testowa",
+        "email": "example4@mail.com",
+        "tags": ["JUnit", "xUnit", "Mockito"],
+        "courses": ["IO"],
+        "description": "Szukam grupy na zajęcia z inżynierii oprogramowania",
+        "date": "2021-02-27T03:35:10.049Z"
+    },
+    {
+        "id": 4,
+        "name": "Marcin",
+        "surname": "Placeholderowy",
+        "email": "example5@mail.com",
+        "tags": ["JS", "TS", "WebDev"],
+        "courses": ["PiPG"],
+        "description": "Hobbystycznie zajmuję się WebDevem",
+        "date": "1995-02-27T03:35:10.049Z"
+    }
+]
+}
