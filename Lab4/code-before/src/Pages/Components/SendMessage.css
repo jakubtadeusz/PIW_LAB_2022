@@ -1,0 +1,33 @@
+
+.SendMessage{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.message-recipient{
+    width: 100%;
+    padding: 1em;
+}
+
+.send{
+    width: 100%;
+    padding: 1em;
+}
+
+@keyframes example {
+    from {opacity: 100%;}
+    to {opacity: 0%;}
+  }
+
+.message-sent-modal{
+    position: absolute;
+    color: white;
+    background-color: #343a40;
+    font-size: xx-large;
+    padding: 2em;
+    border-radius: 1em;
+    animation-name: example;
+    animation-duration: 2s;
+}

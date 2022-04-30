@@ -1,0 +1,19 @@
+.ElementsPage{
+    width: 100%;
+}
+
+.element-buttons{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.4em;
+}
+
+.add-group-member{
+    display: flex;
+    flex-direction: row;
+    margin-left: 0.4em;
+}
+
+input{
+    margin: 0.2em;
+}
