@@ -7,7 +7,8 @@
         "tags": ["React.js", "Angular", "C#", "ASP.NET", ".NET 5.0", "Node.js", "TypeScript", "frontend", "backend"],
         "courses": ["PIW", "AK2", "RiPO"],
         "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
-        "date": "2022-03-10T14:27:32.021Z"
+        "date": 1646922452021,
+        "imageUrl": ""
     },{
         "id": 1,
         "name": "Jacek",
@@ -16,7 +17,8 @@
         "tags": ["Unity", "C#", "frontend"],
         "courses": ["PiPG"],
         "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
-        "date": "2022-03-05T11:37:06.033Z"
+        "date": 1646480226033,
+        "imageUrl": ""
     },
     {
         "id": 2,
@@ -26,7 +28,8 @@
         "tags": ["Java", "Spring", "backend", "Angular", "TypeScript", "frontend"],
         "courses": ["PZ", "UCiSW"],
         "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
-        "date": "2022-02-27T03:35:10.049Z"
+        "date": 1645932910049,
+        "imageUrl": ""
     },
     {
         "id": 3,
@@ -36,7 +39,8 @@
         "tags": ["JUnit", "xUnit", "Mockito"],
         "courses": ["IO"],
         "description": "Szukam grupy na zajęcia z inżynierii oprogramowania",
-        "date": "2021-02-27T03:35:10.049Z"
+        "date": 1614396910049,
+        "imageUrl": ""
     },
     {
         "id": 4,
@@ -46,7 +50,8 @@
         "tags": ["JS", "TS", "WebDev"],
         "courses": ["PiPG"],
         "description": "Hobbystycznie zajmuję się WebDevem",
-        "date": "1995-02-27T03:35:10.049Z"
+        "date": 793856110049,
+        "imageUrl": ""
     }
 ]
 }
