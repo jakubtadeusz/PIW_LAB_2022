@@ -32,7 +32,6 @@ function App() {
       </div>
     </main>
     <footer>Jakub Tadeusz - 256760 - PIW 2022</footer>
-
   </div>
   );
 }

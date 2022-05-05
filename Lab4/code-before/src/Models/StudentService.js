@@ -8,22 +8,29 @@ const StudentService = {
         return new Promise((resolve)=>{
             if(students.length === 0){
                 fetch("/students/students.json").then(res=>res.json()).then(json=>{
-                    var newStudents = [...json.students.values()].map(s=>{s.date = new Date(s.date); return s})
+                    var newStudents = [...json.students.values()]
                     students.push(...newStudents);
                     newId = students.length;
-                    resolve(students.sort(function(a, b){return b.date.getTime()-a.date.getTime()}));
+                    resolve(students.sort(function(a, b){return b.date-a.date}));
                 })
             }else{
-                resolve(students.sort(function(a, b){return b.date.getTime()-a.date.getTime()}));
+                console.log("xdddd", students.sort(function(a, b){return b.date-a.date}))
+                resolve(students.sort(function(a, b){return b.date-a.date}));
             }
         })
     },
 
     addStudent: (student) => {
-        student.id = newId++;
-        student.date = new Date(Date.now());
-        students.push(student);
-        return student.id;
+        return new Promise((resolve)=>{
+            student.id = newId++;
+            student.date = Date.now();
+            students.push(student);
+            resolve(student);
+        })
+    },
+
+    getStudentImage: (student) => {
+        return fetch("https://picsum.photos/70/100").then(resp=>resp.url);
     }
 }
 

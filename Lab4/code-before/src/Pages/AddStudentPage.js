@@ -2,6 +2,8 @@ import {useState} from "react"
 import "./AddElementPage.css"
 import { useNavigate } from "react-router-dom";
 import StudentService from "../Models/StudentService";
+import { useDispatch } from "react-redux";
+import { addStudent } from "../Features/Students/studentsSlice";
 
 function AddStudentPage () {
     const [tags, setTags] = useState([]);
@@ -11,6 +13,8 @@ function AddStudentPage () {
     const [surname, setSurname] = useState("");
     const [email, setEmail] = useState("");
     const [description, setDescription] = useState("");
+
+    const dispatch = useDispatch();
 
     let navigate = useNavigate();
 
@@ -27,7 +31,7 @@ function AddStudentPage () {
             tags: tags,
             courses: courses
         };
-        StudentService.addStudent(student);
+        StudentService.addStudent(student).then(s=>dispatch(addStudent(s)));
         navigate("/students");
     }
 

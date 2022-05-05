@@ -4,11 +4,15 @@ import StudentService from "../Models/StudentService";
 import StudentEntry from "./Components/StudentEntry";
 import StudentSearch from "./Components/StudentSearch";
 import { useNavigate } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { setStudents, addStudentImage } from "../Features/Students/studentsSlice";
 
 
 function StudentsPage() {
-  const [students, setStudents] = useState([]);
-  const [filteredStudents, setFilteredStudents] = useState([]);
+  const students = useSelector(state=>state.students.students);
+  const studentsImages = useSelector(state=>state.students.images);
+
+  const dispatch = useDispatch();
   const [searchButtonContent, setSearchButtonContent] = useState("Rozwiń wyszukiwanie");
   const [showSearch, setShowSearch] = useState(false);
 
@@ -20,9 +24,18 @@ function StudentsPage() {
 
   useEffect(()=>{
     StudentService.getStudents().then(s=>{
-      console.log(s);
-      setStudents(s)});
-  }, [])
+      dispatch(setStudents(s));
+      for(const student of s){
+        console.log(studentsImages[student.id])
+        if(studentsImages[student.id] !== undefined) continue;
+        StudentService.getStudentImage(student).then(url=>dispatch(addStudentImage({id: student.id, url: url})));
+      }
+      });
+  }, []);
+
+  useEffect(()=>{
+    console.log(students);
+  }, [students])
 
 
   useEffect(()=>{
