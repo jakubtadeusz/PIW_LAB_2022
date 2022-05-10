@@ -26,7 +26,7 @@ function SendMessage (props) {
     <div className="SendMessage">
         {showModal && <div className="message-sent-modal">Wysłano!</div>}
         <div className="message-recipient"><h4>Odbiorca: {name}</h4></div>
-        <textarea type={"text"} placeholder="Wprowadź wiadomość..." className="form-control" rows={4} onChange={handleMessageChange} value={message}></textarea>
+        <textarea type={"text"} placeholder="Wprowadź wiadomość..." className="form-control" rows={4} onChange={handleMessageChange} value={message} autoFocus={true}></textarea>
         <div className="send"><button type="button" className="btn btn-dark" onClick={handleSendButton}>Wyślij</button></div>
     </div>
     );
