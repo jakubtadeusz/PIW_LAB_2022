@@ -8,7 +8,8 @@
         "courses": ["PIW", "AK2", "RiPO"],
         "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
         "date": 1646922452021,
-        "imageUrl": ""
+        "imageUrl": "",
+        "password": "1234"
     },{
         "id": 1,
         "name": "Jacek",
@@ -18,7 +19,8 @@
         "courses": ["PiPG"],
         "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
         "date": 1646480226033,
-        "imageUrl": ""
+        "imageUrl": "",
+        "password": "1234"
     },
     {
         "id": 2,
@@ -29,7 +31,8 @@
         "courses": ["PZ", "UCiSW"],
         "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
         "date": 1645932910049,
-        "imageUrl": ""
+        "imageUrl": "",
+        "password": "1234"
     },
     {
         "id": 3,
@@ -40,7 +43,8 @@
         "courses": ["IO"],
         "description": "Szukam grupy na zajęcia z inżynierii oprogramowania",
         "date": 1614396910049,
-        "imageUrl": ""
+        "imageUrl": "",
+        "password": "1234"
     },
     {
         "id": 4,
@@ -51,7 +55,8 @@
         "courses": ["PiPG"],
         "description": "Hobbystycznie zajmuję się WebDevem",
         "date": 793856110049,
-        "imageUrl": ""
+        "imageUrl": "",
+        "password": "1234"
     }
 ]
 }
