@@ -5,7 +5,7 @@ import StudentEntry from "./Components/StudentEntry";
 import StudentSearch from "./Components/StudentSearch";
 import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { setStudents, addStudentImage } from "../Features/Students/studentsSlice";
+import { addStudentImage } from "../Features/Students/studentsSlice";
 
 
 function StudentsPage() {
@@ -24,15 +24,12 @@ function StudentsPage() {
   let navigate = useNavigate();
 
   useEffect(()=>{
-    StudentService.getStudents().then(s=>{
-      dispatch(setStudents(s));
-      for(const student of s){
+      for(const student of students){
         console.log(studentsImages[student.id])
         if(studentsImages[student.id] !== undefined) continue;
         StudentService.getStudentImage(student).then(url=>dispatch(addStudentImage({id: student.id, url: url})));
       }
-      });
-  }, []);
+  }, [dispatch, students, studentsImages]);
 
   useEffect(()=>{
     console.log(students);

@@ -7,16 +7,33 @@ import AddGroupPage from './Pages/AddGroupPage';
 import { useNavigate } from "react-router-dom";
 import SendMessage from './Pages/Components/SendMessage';
 import StudentBasket from './Pages/Components/StudentBasket';
+import LoginPage from './Pages/LoginPage';
+import { LoginProvider } from './Context/LoginContext';
+import {useState, useEffect} from 'react'
+import { setStudents } from "./Features/Students/studentsSlice";
+import { useDispatch } from "react-redux";
+import StudentService from "./Models/StudentService";
 
 function App() {
+  const [loggedUser, setLoggedUser] = useState(null);
   let navigate = useNavigate();
+  let dispatch = useDispatch();
+
+  useEffect(()=>{
+    StudentService.getStudents().then(s=>{
+      dispatch(setStudents(s));
+      });
+  }, [dispatch]);
+
   return (
     <div className="App">
+    <LoginProvider value={loggedUser}>
     <header>
       <div>
       <h2>Code Before</h2>
       <h3>Sometimes repo is better than tinder</h3>
       </div>
+      {loggedUser !== null&&<div>Logged as: {loggedUser.name} {loggedUser.surname}</div>}
       <div><StudentBasket/></div>
     </header>
     <main>
@@ -26,7 +43,7 @@ function App() {
       </nav>
       <div className="AppContent">
         <Routes>
-          <Route path="/" element={<StudentsPage/>}/>
+          <Route path="/" element={<LoginPage setLoggedUser={setLoggedUser}/>}/>
           <Route path="/students" element={<StudentsPage/>} />
           <Route path='/students/add'element={<AddStudentPage/>}/>
           <Route path="/groups" element={<GroupsPage navigate={navigate}/>} />
@@ -36,6 +53,7 @@ function App() {
       </div>
     </main>
     <footer>Jakub Tadeusz - 256760 - PIW 2022</footer>
+    </LoginProvider>
   </div>
   );
 }
