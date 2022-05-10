@@ -4,7 +4,8 @@ export const studentsSlice = createSlice({
   name: "students",
   initialState: {
     students: [],
-    images: []
+    images: [],
+    savedStudents: []
   },
   reducers: {
     setStudents: (state, action) => {
@@ -26,11 +27,23 @@ export const studentsSlice = createSlice({
         ...state,
         students: state.students.concat(action.payload).sort((a, b) => b.date-a.date)
       }
+    },
+    saveStudent: (state, action) => {
+      return {
+        ...state,
+        savedStudents: state.savedStudents.concat(action.payload)
+      }
+    },
+    unfollowStudent: (state, action) =>{
+      return {
+        ...state,
+        savedStudents: state.savedStudents.filter(s=>s.id !== action.payload.id)
+      }
     }
 
   },
 });
 
-export const { setStudents, addStudentImage, addStudent } = studentsSlice.actions
+export const { setStudents, addStudentImage, addStudent, saveStudent, unfollowStudent } = studentsSlice.actions
 
 export default studentsSlice.reducer

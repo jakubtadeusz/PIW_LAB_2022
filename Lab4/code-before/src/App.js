@@ -6,14 +6,18 @@ import GroupsPage from './Pages/GroupsPage';
 import AddGroupPage from './Pages/AddGroupPage';
 import { useNavigate } from "react-router-dom";
 import SendMessage from './Pages/Components/SendMessage';
+import StudentBasket from './Pages/Components/StudentBasket';
 
 function App() {
   let navigate = useNavigate();
   return (
     <div className="App">
     <header>
+      <div>
       <h2>Code Before</h2>
       <h3>Sometimes repo is better than tinder</h3>
+      </div>
+      <div><StudentBasket/></div>
     </header>
     <main>
       <nav>

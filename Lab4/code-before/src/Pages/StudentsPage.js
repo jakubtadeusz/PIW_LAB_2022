@@ -11,6 +11,7 @@ import { setStudents, addStudentImage } from "../Features/Students/studentsSlice
 function StudentsPage() {
   const students = useSelector(state=>state.students.students);
   const studentsImages = useSelector(state=>state.students.images);
+  const savedStudents = useSelector(state=>state.students.savedStudents);
 
   const dispatch = useDispatch();
   const [searchButtonContent, setSearchButtonContent] = useState("Rozwiń wyszukiwanie");
@@ -81,6 +82,10 @@ function StudentsPage() {
   const handleAddStudentButton = () =>{
     navigate("/students/add");
   }
+ 
+  const isSaved = (student) => {
+    return (savedStudents.filter(s=>s.id === student.id).length > 0)
+  }
 
   return (
     <div className="ElementsPage">
@@ -89,7 +94,7 @@ function StudentsPage() {
         <button type="button" className="btn btn-dark" onClick={handleAddStudentButton}>Dodaj nowe ogłoszenie!</button>
       </div>
       {showSearch && getStudentSearch()}
-      {filterStudents(students).map((student)=><StudentEntry student={student} key={"student_" + student.id}></StudentEntry>)}
+      {filterStudents(students).map((student)=><StudentEntry student={{...student, imageUrl: studentsImages[student.id]}} saved={isSaved(student)} key={"student_" + student.id}></StudentEntry>)}
     </div>
   );
   

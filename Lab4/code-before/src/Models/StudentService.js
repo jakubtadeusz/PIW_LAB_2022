@@ -14,7 +14,6 @@ const StudentService = {
                     resolve(students.sort(function(a, b){return b.date-a.date}));
                 })
             }else{
-                console.log("xdddd", students.sort(function(a, b){return b.date-a.date}))
                 resolve(students.sort(function(a, b){return b.date-a.date}));
             }
         })
