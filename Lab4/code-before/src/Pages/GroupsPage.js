@@ -1,11 +1,11 @@
 import React from 'react';
+import { LoginContext } from '../Context/LoginContext';
 import GroupService from '../Models/GroupService'
 import GroupComponent from './Components/GroupComponent';
 import GroupSearch from './Components/GroupSearch';
 import './ElementsPage.css'
 
 class GroupsPage extends React.Component {
-    
     constructor (props) {
         super(props);
 
@@ -18,9 +18,14 @@ class GroupsPage extends React.Component {
         }
 
         this.navigate = props.navigate;
+        
+
     }
 
     componentDidMount(){
+        if(this.context === null){
+            this.navigate("/")
+        }
         GroupService.getGroups().then(groups=>{
             console.log(groups);
             this.setState({groups: groups});
@@ -70,5 +75,6 @@ class GroupsPage extends React.Component {
         );
     }
 }
+GroupsPage.contextType = LoginContext;
 
 export default GroupsPage;

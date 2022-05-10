@@ -4,6 +4,8 @@ import { useNavigate } from "react-router-dom";
 import StudentService from "../Models/StudentService";
 import { useDispatch } from "react-redux";
 import { addStudent } from "../Features/Students/studentsSlice";
+import { LoginContext } from "../Context/LoginContext";
+import {useContext} from 'react'
 
 function AddStudentPage () {
     const [tags, setTags] = useState([]);
@@ -17,6 +19,14 @@ function AddStudentPage () {
     const dispatch = useDispatch();
 
     let navigate = useNavigate();
+
+    const student = useContext(LoginContext);
+    if(student !== null && name === "" && surname === ""){
+        setName(student.name);
+        setSurname(student.surname);
+    }
+
+
 
     const handleBackButton = () => {
         navigate("..")
@@ -50,11 +60,11 @@ function AddStudentPage () {
         <button type="button" className="btn btn-dark" onClick={handleBackButton}>Cofnij</button>
         <div className="student-info">
             <div>Imię: </div>
-            <input type={"text"} placeholder="Wprowadź imię" className="form-control" onChange={(event)=>setName(event.target.value)}></input>
+            <input type={"text"} placeholder="Wprowadź imię" className="form-control" onChange={(event)=>setName(event.target.value)} value={name}></input>
         </div>
         <div className="student-info">
             <div>Nazwisko: </div>
-            <input type={"text"} placeholder="Wprowadź nazwisko" className="form-control" onChange={(event)=>setSurname(event.target.value)}></input>
+            <input type={"text"} placeholder="Wprowadź nazwisko" className="form-control" onChange={(event)=>setSurname(event.target.value)} value={surname}></input>
         </div>
         <div className="student-info">
             <div>Email: </div>

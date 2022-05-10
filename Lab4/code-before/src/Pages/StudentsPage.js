@@ -1,11 +1,13 @@
 import "./ElementsPage.css"
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import StudentService from "../Models/StudentService";
 import StudentEntry from "./Components/StudentEntry";
 import StudentSearch from "./Components/StudentSearch";
 import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { addStudentImage } from "../Features/Students/studentsSlice";
+import { LoginContext } from "../Context/LoginContext";
+import useLocalStorage from "../Hooks/useLocalStorage";
 
 
 function StudentsPage() {
@@ -20,8 +22,18 @@ function StudentsPage() {
   const [tagsToFilter, setTagsToFilter] = useState([]);
   const [courseToFilter, setCourseToFilter] = useState("");
   const [descToFilter, setDescToFilter] = useState("");
+  const localStorage = useLocalStorage();
 
   let navigate = useNavigate();
+
+  let context = useContext(LoginContext);
+
+  useEffect(()=>{
+    if(context === null){
+      console.log("local", localStorage);
+      navigate('/')
+    }
+  }, [])
 
   useEffect(()=>{
       for(const student of students){

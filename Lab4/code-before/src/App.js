@@ -25,6 +25,19 @@ function App() {
       });
   }, [dispatch]);
 
+  useEffect(()=>{
+    if(loggedUser === null){
+      if(localStorage.logged !== undefined){
+        setLoggedUser(JSON.parse(localStorage.logged));
+      }
+    }
+  }, [loggedUser])
+
+  const logout = () => {
+    setLoggedUser(null);
+    localStorage.removeItem("logged");
+    navigate('/')
+  }
   return (
     <div className="App">
     <LoginProvider value={loggedUser}>
@@ -33,7 +46,9 @@ function App() {
       <h2>Code Before</h2>
       <h3>Sometimes repo is better than tinder</h3>
       </div>
-      {loggedUser !== null&&<div>Logged as: {loggedUser.name} {loggedUser.surname}</div>}
+      {loggedUser !== null&&<div style={{display: "flex", flexDirection: "column", alignItems: "center", marginLeft:"50vw"}}><div>Logged as: {loggedUser.name} {loggedUser.surname}</div>
+      <div><button type='button' className='btn btn-dark' onClick={logout}>Logout</button></div>
+      </div>}
       <div><StudentBasket/></div>
     </header>
     <main>

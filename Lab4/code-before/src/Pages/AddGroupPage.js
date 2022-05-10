@@ -1,7 +1,8 @@
-import {useState} from "react"
+import {useState, useContext} from "react"
 import "./AddElementPage.css"
 import { useNavigate } from "react-router-dom";
 import GroupService from "../Models/GroupService";
+import { LoginContext } from "../Context/LoginContext";
 
 function AddGroupPage () {
     const [course, setCourse] = useState([]);
@@ -14,6 +15,12 @@ function AddGroupPage () {
     const [memberEmail, setMemberEmail] = useState("");
     const [memberOccupation, setMemberOccupation] = useState("");
 
+    const student = useContext(LoginContext);
+    if(student !== null && team.length === 0 && memberName === "" && memberSurname === ""){
+        setMemberName(student.name);
+        setMemberSurname(student.surname);
+    }
+    
     let navigate = useNavigate();
 
     const handleBackButton = () => {
@@ -38,6 +45,10 @@ function AddGroupPage () {
             occupation: memberOccupation,
             email: memberEmail
         }
+        setMemberName("");
+        setMemberSurname("");
+        setMemberOccupation("");
+        setMemberEmail("");
         const newTeam = [...team];
         newTeam.push(member);
         setTeam(newTeam);
@@ -65,10 +76,10 @@ function AddGroupPage () {
                     return <div className="group-member" key={"member_" + i}>{member.name} {member.surname} {member.occupation}</div>
                 })}
                 <div className="add-group-member">
-                    <input type={"text"} placeholder="Wprowadź imię" className="form-control" onChange={(event)=>setMemberName(event.target.value)}></input>
-                    <input type={"text"} placeholder="Wprowadź nazwisko" className="form-control" onChange={(event)=>setMemberSurname(event.target.value)}></input>
-                    <input type={"text"} placeholder="Wprowadź email" className="form-control" onChange={(event)=>setMemberEmail(event.target.value)}></input>
-                    <input type={"text"} placeholder="Wprowadź obowiązki" className="form-control" onChange={(event)=>setMemberOccupation(event.target.value)}></input>
+                    <input type={"text"} placeholder="Wprowadź imię" className="form-control" onChange={(event)=>setMemberName(event.target.value)} value={memberName}></input>
+                    <input type={"text"} placeholder="Wprowadź nazwisko" className="form-control" onChange={(event)=>setMemberSurname(event.target.value)} value={memberSurname}></input>
+                    <input type={"text"} placeholder="Wprowadź email" className="form-control" onChange={(event)=>setMemberEmail(event.target.value)} value={memberEmail}></input>
+                    <input type={"text"} placeholder="Wprowadź obowiązki" className="form-control" onChange={(event)=>setMemberOccupation(event.target.value)} value={memberOccupation}></input>
                     <button type={"button"} className="btn btn-dark" onClick={handleAddMemberButton}>Dodaj</button>
                 </div>
             </div>
