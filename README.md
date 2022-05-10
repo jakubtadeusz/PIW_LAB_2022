@@ -34,11 +34,11 @@
 
 <details><summary>Zrzuty ekranu</summary>
 
-![screen1](/Lab4/screens/Screen1.png)
+![screen1](/Lab4/Screens/Screen1.png)
   
-![screen2](/Lab4/screens/Screen2.png)
+![screen2](/Lab4/Screens/Screen2.png)
   
-![screen3](/Lab4/screens/Screen3.png)
+![screen3](/Lab4/Screens/Screen3.png)
   
   
 </details>
