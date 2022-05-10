@@ -27,3 +27,18 @@
 ![sent](/Lab3/screens/sent.png)
   
 </details>
+
+## Laboratorium 4 - React.JS + Redux
+
+[link do repozytorium](https://github.com/jakubtadeusz/PIW_LAB_2022/tree/main/Lab4/code-before)
+
+<details><summary>Zrzuty ekranu</summary>
+
+![screen1](/Lab4/Screens/Screen1.png)
+  
+![screen2](/Lab4/Screens/Screen2.png)
+  
+![screen3](/Lab4/Screens/Screen3.png)
+  
+  
+</details>
